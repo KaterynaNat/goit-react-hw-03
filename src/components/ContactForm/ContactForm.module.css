@@ -1,0 +1,48 @@
+.inputContainer {
+    margin-bottom: 15px;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #63d4daeb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #38c1b5;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  
+  .invalidMessages {
+    margin-top: 10px;
+  }
+  
+  .invalidMessages p {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+  }

@@ -1,0 +1,19 @@
+input {
+    padding: 12px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #e1a7c1;
+    border-radius: 8px;
+    background-color: #fff0f6;
+    font-size: 16px;
+    color: #f08c9b;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 8px rgba(255, 182, 193, 0.5);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #f7a1c3;
+    box-shadow: 0 0 8px rgba(255, 182, 193, 0.7);
+  }
