@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import styles from './ContactForm.module.css';
@@ -16,21 +15,14 @@ const validationSchema = Yup.object({
 });
 
 const ContactForm = ({ onAddContact }) => {
-  const [formError, setFormError] = useState('');
-
   return (
     <div className={styles.formContainer}>
       <Formik
         initialValues={{ name: '', number: '' }}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          if (values.name && values.number) {
-            onAddContact(values.name, values.number);
-            resetForm();
-            setFormError('');
-          } else {
-            setFormError('Please enter data');
-          }
+          onAddContact(values.name, values.number);
+          resetForm();
         }}
       >
         {({ errors, touched }) => (
@@ -40,7 +32,7 @@ const ContactForm = ({ onAddContact }) => {
                 type="text"
                 name="name"
                 placeholder="Enter name"
-                className={styles.input}
+                className={`${styles.input} ${errors.name && touched.name ? styles.inputError : ''}`}
               />
               {errors.name && touched.name && <div className={styles.error}>{errors.name}</div>}
             </div>
@@ -49,11 +41,10 @@ const ContactForm = ({ onAddContact }) => {
                 type="text"
                 name="number"
                 placeholder="Enter phone number"
-                className={styles.input}
+                className={`${styles.input} ${errors.number && touched.number ? styles.inputError : ''}`}
               />
               {errors.number && touched.number && <div className={styles.error}>{errors.number}</div>}
             </div>
-            {formError && <div className={styles.error}>{formError}</div>}
             <button type="submit" className={styles.submitButton}>Add Contact</button>
           </Form>
         )}
